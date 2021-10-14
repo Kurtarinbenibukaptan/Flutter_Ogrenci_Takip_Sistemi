@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deneme_1/models/student.dart';
 import 'package:flutter_deneme_1/screens/student_add.dart';
+import 'package:flutter_deneme_1/screens/student_edit.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
@@ -110,8 +111,8 @@ class _MyAppState extends State<MyApp> {
                 ),
                 onPressed: () {
                   var mesajNot =
-                      "Öğrenci Güncellendi :   " + selectedStudent.firstName;
-                  mesajGoster(context, mesajNot);
+                     Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => StudentEdit(selectedStudent)));
                 },
               ),
             ),
